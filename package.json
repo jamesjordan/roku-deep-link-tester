@@ -1,0 +1,64 @@
+{
+  "name": "roku-deep-link-tester",
+  "version": "1.0.0",
+  "description": "Professional deep link testing tool for Roku applications with support for signed-in and non-signed-in scenarios",
+  "main": "index.js",
+  "bin": {
+    "roku-deep-link": "./bin/cli.js",
+    "roku-dl": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "start": "node bin/cli.js",
+    "example:basic": "node bin/cli.js --ip 192.168.7.206 --content 57603 --type episode",
+    "example:signed-in": "node bin/cli.js --ip 192.168.7.206 --content 57603 --type episode --signed-in --script ./examples/signin.rasp",
+    "example:published": "node bin/cli.js --ip 192.168.7.206 --app 151908 --content 57603 --type episode"
+  },
+  "keywords": [
+    "roku",
+    "deep-link",
+    "deep-linking",
+    "certification",
+    "ecp",
+    "testing",
+    "automation",
+    "rasp",
+    "brightscript",
+    "streaming"
+  ],
+  "author": {
+    "name": "PkgRelease",
+    "email": "support@pkgrelease.com",
+    "url": "https://pkgrelease.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgrelease/roku-deep-link-tester.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pkgrelease/roku-deep-link-tester/issues"
+  },
+  "homepage": "https://github.com/pkgrelease/roku-deep-link-tester#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "commander": "^11.0.0",
+    "yaml": "^2.3.0",
+    "chalk": "4.1.2",
+    "ora": "5.4.1",
+    "boxen": "5.1.2"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "examples/",
+    "README.md",
+    "LICENSE"
+  ]
+}

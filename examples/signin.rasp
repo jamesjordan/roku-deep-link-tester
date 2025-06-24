@@ -1,0 +1,36 @@
+params:   
+    rasp_version: 1
+    default_keypress_wait: 2
+    channels:   
+        MyApp: dev
+        
+steps:  
+    # Launch the application
+    - launch: MyApp
+    
+    # Wait for app to load
+    - pause: 5
+    
+    # Navigate to sign-in option (common pattern)
+    - press: down
+    - press: down
+    - press: ok
+    
+    # Enter email (replace script-login with actual email or set RASP_LOGIN env var)
+    - text: script-login
+    
+    # Move to password field
+    - press: down
+    
+    # Enter password (replace script-password with actual password or set RASP_PASSWORD env var)
+    - text: script-password
+    
+    # Submit the form
+    - press: ok
+    
+    # Wait for sign-in to complete
+    - pause: 10
+    
+    # Navigate to main content area
+    - press: down
+    - press: ok

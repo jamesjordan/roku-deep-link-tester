@@ -1,0 +1,11 @@
+test/
+.git/
+.gitignore
+*.log
+.DS_Store
+.env*
+coverage/
+.nyc_output/
+temp/
+examples/*.env
+TODO.txt

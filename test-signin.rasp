@@ -1,0 +1,15 @@
+params:   
+    rasp_version: 1
+    default_keypress_wait: 2
+    channels:   
+        MyApp: dev
+        
+steps:  
+    - launch: MyApp
+    - pause: 5
+    - press: ok
+    - text: script-login
+    - press: down
+    - text: script-password
+    - press: ok
+    - pause: 10

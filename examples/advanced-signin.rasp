@@ -1,0 +1,66 @@
+params:   
+    rasp_version: 1
+    default_keypress_wait: 1.5
+    channels:   
+        MyStreamingApp: dev
+        Production: 12345
+        
+steps:  
+    # Launch the streaming application
+    - launch: MyStreamingApp
+    
+    # Wait for splash screen and initial load
+    - pause: 8
+    
+    # Handle potential welcome screen or tutorial
+    - press: ok
+    - pause: 2
+    
+    # Navigate to account/profile section
+    - press: up
+    - press: right
+    - press: right
+    - press: ok
+    
+    # Select "Sign In" option
+    - press: down
+    - press: ok
+    
+    # Wait for sign-in screen to load
+    - pause: 3
+    
+    # Enter login/email address
+    # You can set these via environment variables:
+    # export RASP_LOGIN="user@example.com"
+    # export RASP_PASSWORD="mypassword"
+    - text: script-login
+    
+    # Navigate to password field
+    - press: down
+    - pause: 1
+    
+    # Enter password
+    - text: script-password
+    
+    # Submit the sign-in form
+    - press: down
+    - press: ok
+    
+    # Wait for authentication and account loading
+    - pause: 15
+    
+    # Navigate past any post-signin prompts or tutorials
+    - press: ok
+    - pause: 2
+    - press: ok
+    - pause: 2
+    
+    # Navigate to main content browsing area
+    - press: home
+    - pause: 3
+    - press: down
+    - press: down
+    - press: ok
+    
+    # Final pause to ensure app is ready for deep link testing
+    - pause: 5
